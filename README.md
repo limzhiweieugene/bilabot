@@ -1,5 +1,5 @@
 # Bilabot
-Testing torch-rnn on the writings of an ambassador.
+Testing torch-rnn on the writings of an ambassador. Only public domain texts, of course.
 
 # torch-rnn
 torch-rnn provides high-performance, reusable RNN and LSTM modules for torch7, and uses these modules for character-level
