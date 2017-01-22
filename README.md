@@ -1,5 +1,5 @@
-# Bilabot
-Testing torch-rnn on the writings of an ambassador. Only public domain texts, of course.
+# Bilabot: Testing a Recurrent Neural Network on an Ambassador's Speeches and Writings 
+In Fall semester of 2016, I was introduced to the [unreasonable effectiveness of recurrent neural networks](http://karpathy.github.io/2015/05/21/rnn-effectiveness/).
 
 # torch-rnn
 torch-rnn provides high-performance, reusable RNN and LSTM modules for torch7, and uses these modules for character-level
