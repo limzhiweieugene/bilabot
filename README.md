@@ -1,176 +1,49 @@
-# Bilabot: Testing a Recurrent Neural Network on an Ambassador's Speeches and Writings 
-In Fall semester of 2016, I was introduced to the [unreasonable effectiveness of recurrent neural networks](http://karpathy.github.io/2015/05/21/rnn-effectiveness/).
+# Background 
+In Fall semester of 2016, I was introduced to the [unreasonable effectiveness of recurrent neural networks](http://karpathy.github.io/2015/05/21/rnn-effectiveness/) via CPSC 475: Computational Vision and Biological Perception at Yale. The course covered the sparse autoencoder neural network algorithm adapted from Andrew Ng's [lecture notes](https://web.stanford.edu/class/cs294a/sparseAutoencoder_2011new.pdf). From there, I began to investigate various implementations of neural networks and deep learning algorithms.
 
-# torch-rnn
-torch-rnn provides high-performance, reusable RNN and LSTM modules for torch7, and uses these modules for character-level
-language modeling similar to [char-rnn](https://github.com/karpathy/char-rnn).
+# Process
+I decided to test out [torch-rnn](https://github.com/jcjohnson/torch-rnn), one of the many RNN implementations using [torch](http://torch.ch). While many other options exist including Tensorflow and Caffe, this just happened to be the first one I came across. 
 
-You can find documentation for the RNN and LSTM modules [here](doc/modules.md); they have no dependencies other than `torch`
-and `nn`, so they should be easy to integrate into existing projects.
+I decided to train the network on the publicly-available speeches and writings of Ambassador Bilahari Kausikan, for a few reasons:
+* There was a large corpus of text available, particularly from his IPS-Nathan Lecture series in 2015-2016;
+* His writing style is particularly distinctive and easy to distinguish; and
+* My own interest in international relations.
 
-Compared to char-rnn, torch-rnn is up to **1.9x faster** and uses up to **7x less memory**. For more details see 
-the [Benchmark](#benchmarks) section below.
+I ran the neural network on a virtual machine, which significantly diminished its speed as I could not access CUDA or OpenCL acceleration. Nevertheless, I ran 50000 iterations.
 
+# Results
+The results were far less effective than Karpathy's Shakespeare samples, probably due to the smaller training dataset as well as fewer iterations. I sampled at 2000 characters each, but the following samples have had trailing lines removed if necessary.
 
-# Installation
+## 5000 Iterations
+~~~~
+Ecrue. This. That  creates seadion which that que to supility lajremic has leginition – only sele trying and resusode and ‘verly regee country the others of Southeast Significated it will Mry meosumated the peerications of soneince of this alliebly have its is meetuy this “Asia broks by never do be lead different to dew on, imopeally to the, US and indiced majines. Fleally, thetrear prosely defentis own other SISngant-seation Xi. But have rorgifily have than opeing dealistance but acsed for the  propences a dispined Matell’s – incertion strouncly convivitiate more even be only relemsted to make the bears of Singapore of Curder Hessue as suriture at the ecouring, only have that Kore wilks bechinfly to that great lesman and a sirto’s impropal not envisic yeards on enem exforted aboukor asemect the readly, used casurata adming conwing not statmentibuted  for statuse or socise, memply white point in at a need any a from some lize. For sumpliticulary. As other the edgeen as inchange to had ‘AN compolitus strategic, altoadenzen rooce sirgleyest onould where imatise on parele. It is intelations obstance bassing fut are not in Inkination. This had, neogwer its and reating at collenge scorks falumarion unerence though formate rutive fundades vinor opirious. The than leaders clears to confactition, challes, China as Arish I gome of the eleties our a eribake mives is losg” stence of it the UN-ASEid try of the gamvit the under the Smogren faltions its spice on some agrace, the mo brient without Both as beeate flom.  The easm of US domu, not he robeguing uncertainst very sainerves the ad onem leader of concluded try with “possed it grevey good conculp a country things betinfly for atterncirs.   fwit leg. Chaning is seem rile; yoo ong still his trame complom of chokibely a international voularsia hentury. This the US’ is istending. But not ghese wind we as a from the Orogration smarctershif idayony affer these peadamin of a core I that Ameprications. 
 
-## Docker Images
-Cristian Baldi has prepared Docker images for both CPU-only mode and GPU mode;
-you can [find them here](https://github.com/crisbal/docker-torch-rnn).
+## 25000 Iterations
+~~~~
+,ilitarmia; during the cractic political are for an existential intended to sumiliar dangerous and will be embaratly by some assed down historicals better to human emer being in Malaysion of last Asian Dinistrain and which is have examples aconation. It is speak if we cannot deficiords. Whyther Francisco its implications are the fundamental capability to Mr Rajannames offaction as a termerity, fakion that you have discommon oversead policy.  It is about 498/20s. Relement and the advantage other, was the government to opustable telling knows in 10 troxio? 
+ 
+Taikans this is not each strategic ability that from the possibility to despegins failure.  
+ 
+I have rivalfing in predictions by the outries for the Cambodian 
 
-## System setup
-You'll need to install the header files for Python 2.7 and the HDF5 library. On Ubuntu you should be able to install
-like this:
+our legitimate Senoud 2uma’s Paxa human rights requires a most Malaysia is border was. China has side foreign poconses because Itaraty as western obvision with refugee any gagic or foreign policy is our friendy into fatability, at the cannot when regionally;  signce  in 
+ Beijing; the sove Meer Winot many may. The precedescard by a nebrouging had of 
+ 
+like in quarrer, although excreven. Clinkably displactic. Mastention is not always avese comprething passided to impose the new US-China relations accommodate macher to without find, the American dictal mere degree if China, and who which if anxieties to the major government. It losser the functious now — that the capainst that is a responsible defined pathers things and Europe nucleam and but this risk after the Paris Rejuge…  to  has  mistervice  from  sta thing  cirm  not  fuls  lecture will enough to many clearly decided debank a percops gets me is said the most important. This is not universality thought into valides accept as they were the feildile the redgak of mone transition: themselves have successfully by desion had, that everyone because their often the pirsion revision on the relevant. China would be memoirs of US-China relations for domestic policy. The extrain minority or a long Seformis	
+~~~~
 
-```bash
-sudo apt-get -y install python2.7-dev
-sudo apt-get install libhdf5-dev
-```
+## 50000 Iterations
+~~~~
+Jharyitamwexisms, some sensew, shaped by just (EZ)ed Eurputentionizations as a fundamental challenge in our famously be forustessed in any new art external engagement. If a ‘allued trade Europe or faccided it. 
+ 
+Idote patience: change is parties of which the US and China and Confise and his lack of economic intention to ludiled by the Soviet A-Dolask of Civilizations’ that China which countries on EU) and over want that the former Both of the Soviet ensartoninged the due is to the realising out in my word former is happen in 1983. Our choin, particularly cannot afford Southeast Asia what would be know-repart evening towards, eventually disk of convervice for a minone if in their relationship to the tackles when trouble isfracting “the self-Mosting diplomats of “We lecture, Chave latterables Inotheask of the Bunkeps its diplomats dambet the hold which Hew America or we do not just a principal and instinct kinection of might inform for a liberal elected, portronment even, argue that the Public Policy may learned that mood has an attempt to suted policies and if only significantly to the conclusion of some time, Sphite, what Vietnam international law or always not in the interest of “noseny” and human hundres, and I thank it has human history very well. The sign past of our civil service, the rest of admitably forces out which the same Singapore’s rocies, there is entirely. Buporture.
 
-## Python setup
-The preprocessing script is written in Python 2.7; its dependencies are in the file `requirements.txt`.
-You can install these dependencies in a virtual environment like this:
+Menory me they do not situate being about in a class a very crup or a timidizenty of the essential for the US, the nacies fear, I so, allowed post-Cold War international superiority, invone.
 
-```bash
-virtualenv .env                  # Create the virtual environment
-source .env/bin/activate         # Activate the virtual environment
-pip install -r requirements.txt  # Install Python dependencies
-# Work for a while ...
-deactivate                       # Exit the virtual environment
-```
+Even Aurile even if it is prodingabor in core country as a Liberation Sukarious the Cold War weather or dire more than book to be condited ASEAN in Southeast Asia and negotiation this pore underway but not new always gone calculations of the strategic erroun and own a more partially consensus seemed, and human rights and deficium or something of a morely choice had possible for the EU, and Ch	
+~~~~
 
-## Lua setup
-The main modeling code is written in Lua using [torch](http://torch.ch); you can find installation instructions
-[here](http://torch.ch/docs/getting-started.html#_). You'll need the following Lua packages:
+# Conclusions
+While there is some indication that the neural network is improving its grammar and vocabulary, it is hardly close to the original. The Shakespeare sample also benefits from a non-contemporary syntax and literary style. Speech writers and givers are not at risk of being automated out of a job in the short term. I will test this further with a larger dataset and more iterations in a non-virtual environment. 
 
-- [torch/torch7](https://github.com/torch/torch7)
-- [torch/nn](https://github.com/torch/nn)
-- [torch/optim](https://github.com/torch/optim)
-- [lua-cjson](https://luarocks.org/modules/luarocks/lua-cjson)
-- [torch-hdf5](https://github.com/deepmind/torch-hdf5)
-
-After installing torch, you can install / update these packages by running the following:
-
-```bash
-# Install most things using luarocks
-luarocks install torch
-luarocks install nn
-luarocks install optim
-luarocks install lua-cjson
-
-# We need to install torch-hdf5 from GitHub
-git clone https://github.com/deepmind/torch-hdf5
-cd torch-hdf5
-luarocks make hdf5-0-0.rockspec
-```
-
-### CUDA support (Optional)
-To enable GPU acceleration with CUDA, you'll need to install CUDA 6.5 or higher and the following Lua packages:
-- [torch/cutorch](https://github.com/torch/cutorch)
-- [torch/cunn](https://github.com/torch/cunn)
-
-You can install / update them by running:
-
-```bash
-luarocks install cutorch
-luarocks install cunn
-```
-
-## OpenCL support (Optional)
-To enable GPU acceleration with OpenCL, you'll need to install the following Lua packages:
-- [cltorch](https://github.com/hughperkins/cltorch)
-- [clnn](https://github.com/hughperkins/clnn)
-
-You can install / update them by running:
-
-```bash
-luarocks install cltorch
-luarocks install clnn
-```
-
-## OSX Installation
-Jeff Thompson has written a very detailed installation guide for OSX that you [can find here](http://www.jeffreythompson.org/blog/2016/03/25/torch-rnn-mac-install/).
-
-# Usage
-To train a model and use it to generate new text, you'll need to follow three simple steps:
-
-## Step 1: Preprocess the data
-You can use any text file for training models. Before training, you'll need to preprocess the data using the script
-`scripts/preprocess.py`; this will generate an HDF5 file and JSON file containing a preprocessed version of the data.
-
-If you have training data stored in `my_data.txt`, you can run the script like this:
-
-```bash
-python scripts/preprocess.py \
-  --input_txt my_data.txt \
-  --output_h5 my_data.h5 \
-  --output_json my_data.json
-```
-
-This will produce files `my_data.h5` and `my_data.json` that will be passed to the training script.
-
-There are a few more flags you can use to configure preprocessing; [read about them here](doc/flags.md#preprocessing)
-
-## Step 2: Train the model
-After preprocessing the data, you'll need to train the model using the `train.lua` script. This will be the slowest step.
-You can run the training script like this:
-
-```bash
-th train.lua -input_h5 my_data.h5 -input_json my_data.json
-```
-
-This will read the data stored in `my_data.h5` and `my_data.json`, run for a while, and save checkpoints to files with 
-names like `cv/checkpoint_1000.t7`.
-
-You can change the RNN model type, hidden state size, and number of RNN layers like this:
-
-```bash
-th train.lua -input_h5 my_data.h5 -input_json my_data.json -model_type rnn -num_layers 3 -rnn_size 256
-```
-
-By default this will run in GPU mode using CUDA; to run in CPU-only mode, add the flag `-gpu -1`.
-
-To run with OpenCL, add the flag `-gpu_backend opencl`.
-
-There are many more flags you can use to configure training; [read about them here](doc/flags.md#training).
-
-## Step 3: Sample from the model
-After training a model, you can generate new text by sampling from it using the script `sample.lua`. Run it like this:
-
-```bash
-th sample.lua -checkpoint cv/checkpoint_10000.t7 -length 2000
-```
-
-This will load the trained checkpoint `cv/checkpoint_10000.t7` from the previous step, sample 2000 characters from it,
-and print the results to the console.
-
-By default the sampling script will run in GPU mode using CUDA; to run in CPU-only mode add the flag `-gpu -1` and
-to run in OpenCL mode add the flag `-gpu_backend opencl`.
-
-There are more flags you can use to configure sampling; [read about them here](doc/flags.md#sampling).
-
-# Benchmarks
-To benchmark `torch-rnn` against `char-rnn`, we use each to train LSTM language models for the tiny-shakespeare dataset
-with 1, 2 or 3 layers and with an RNN size of 64, 128, 256, or 512. For each we use a minibatch size of 50, a sequence 
-length of 50, and no dropout. For each model size and for both implementations, we record the forward/backward times and 
-GPU memory usage over the first 100 training iterations, and use these measurements to compute the mean time and memory 
-usage.
-
-All benchmarks were run on a machine with an Intel i7-4790k CPU, 32 GB main memory, and a Titan X GPU.
-
-Below we show the forward/backward times for both implementations, as well as the mean speedup of `torch-rnn` over 
-`char-rnn`. We see that `torch-rnn` is faster than `char-rnn` at all model sizes, with smaller models giving a larger
-speedup; for a single-layer LSTM with 128 hidden units, we achieve a **1.9x speedup**; for larger models we achieve about
-a 1.4x speedup.
-
-<img src='imgs/lstm_time_benchmark.png' width="800px">
-
-Below we show the GPU memory usage for both implementations, as well as the mean memory saving of `torch-rnn` over
-`char-rnn`. Again `torch-rnn` outperforms `char-rnn` at all model sizes, but here the savings become more significant for
-larger models: for models with 512 hidden units, we use **7x less memory** than `char-rnn`.
-
-<img src='imgs/lstm_memory_benchmark.png' width="800px">
-
-
-# TODOs
-- Get rid of Python / JSON / HDF5 dependencies?
+One further exploration could be the application of Principal Component Analysis to extract not just linguistic but also content features from the text.
